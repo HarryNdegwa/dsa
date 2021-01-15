@@ -2,7 +2,7 @@ class Node(object):
 
     def __init__(self,value):
         self.value = value
-        self.next_node:None
+        self.next_node = None
 
 
 class LinkedList(object):
@@ -32,7 +32,7 @@ class LinkedList(object):
         if self.head == None:
             return 
         elif self.head.value == value:
-            self.head = None
+            self.head = self.head.next_node
         else:
             self._delete(self.head,value)
 
@@ -63,13 +63,21 @@ class LinkedList(object):
 
     def _search(self,current_node,value):
         if current_node == None:
-            return
+            return 
         elif current_node.value == value:
-            return current_node
-        return self.search(current_node.next_node,value)
+            return current_node.next_node.value
+        return self._search(current_node.next_node,value)
 
 
-
+if __name__ == "__main__":
+    l = LinkedList(1)
+    l.insert(2)
+    l.insert(3)
+    l.insert(4)
+    # l.print_list()
+    # print(l.search(1))
+    l.delete(3)
+    l.print_list()
 
 
     
