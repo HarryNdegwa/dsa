@@ -14,6 +14,15 @@ class LinkedList(object):
             self.head = None
 
 
+    def insert_start(self,value):
+        if self.head == None:
+            self.head == Node(value)
+        else:
+            current_head = self.head
+            self.head = Node(value)
+            self.head.next_node = current_head
+
+
     def insert_end(self,value):
         if self.head == None:
             self.head = Node(value)
@@ -74,9 +83,9 @@ if __name__ == "__main__":
     l.insert_end(2)
     l.insert_end(3)
     l.insert_end(4)
-    # l.print_list()
-    # print(l.search(1))
-    l.delete(3)
+    l.insert_start(0)
+    l.insert_start(10)
+    l.insert_start(100)
     l.print_list()
 
 
