@@ -60,14 +60,14 @@ class LinkedList(object):
         elif self.head.value == value:
             self.head = self.head.next_node
         else:
-            self._delete(self.head,value)
+            self._delete(self.head.next_node,self.head,value)
 
 
-    def _delete(self,current_node,value):
+    def _delete(self,current_node,parent_node,value):
         if current_node.value == value:
-            current_node = current_node.next_node
+            parent_node.next_node = current_node.next_node
         else:
-            self._delete(current_node.next_node,value)
+            self._delete(current_node.next_node,current_node,value)
 
 
     def print_list(self):
@@ -116,7 +116,9 @@ if __name__ == "__main__":
     l.insert_start(100)
     l.insert_center(1000)
     l.print_list()
-    print(l.size())
+    print(f"Size is {l.size()}")
+    l.delete(100)
+    l.print_list()
 
 
     
