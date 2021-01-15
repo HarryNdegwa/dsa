@@ -48,7 +48,7 @@ class LinkedList(object):
         if not self.head:
             print("Empty!!")
         else:
-            current = self.head:
+            current = self.head
             while current:
                 print(current.value)
                 current = current.next_node
