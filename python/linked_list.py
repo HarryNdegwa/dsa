@@ -78,6 +78,17 @@ class LinkedList(object):
         return self._search(current_node.next_node,value)
 
 
+    def size(self):
+        if self.head == None:
+            return 0
+        count_ = 0
+        current = self.head
+        while current:
+            count_+=1
+            current = current.next_node
+        return count_
+
+
 if __name__ == "__main__":
     l = LinkedList(1)
     l.insert_end(2)
@@ -87,6 +98,7 @@ if __name__ == "__main__":
     l.insert_start(10)
     l.insert_start(100)
     l.print_list()
+    print(l.size())
 
 
     
