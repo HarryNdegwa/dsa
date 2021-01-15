@@ -44,6 +44,17 @@ class LinkedList(object):
             self._delete(current_node.next_node,value)
 
 
+    def print_list(self):
+        if not self.head:
+            print("Empty!!")
+        else:
+            current = self.head:
+            while current:
+                print(current.value)
+                current = current.next_node
+               
+
+
 
 
 
