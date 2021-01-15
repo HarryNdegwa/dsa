@@ -15,4 +15,15 @@ class DoublyLinkedList(object):
         else:
             self.head = None
 
+
+
+    def insert_start(self,value):
+        if self.head:
+            head = self.head
+            self.head = Node(value)
+            self.head.next_node = head
+        else:
+            self.head = Node(value)
+
+
     
