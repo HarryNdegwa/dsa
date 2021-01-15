@@ -21,6 +21,23 @@ class LinkedList(object):
             current_head = self.head
             self.head = Node(value)
             self.head.next_node = current_head
+            
+
+    def insert_center(self,value):
+        if self.size():
+            center = round(self.size()/2)
+            self._insert_center(self.head,value,center)
+        else:
+            self.head = Node(value)
+
+
+    def _insert_center(self,current_node,value,center,count=1):
+        if count == center:
+            next_ = current_node.next_node
+            current_node.next_node = Node(value)
+            current_node.next_node.next_node = next_
+        else:
+            self._insert_center(current_node.next_node,value,center,count+1)
 
 
     def insert_end(self,value):
@@ -97,6 +114,7 @@ if __name__ == "__main__":
     l.insert_start(0)
     l.insert_start(10)
     l.insert_start(100)
+    l.insert_center(1000)
     l.print_list()
     print(l.size())
 
