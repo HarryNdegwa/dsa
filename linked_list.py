@@ -52,6 +52,27 @@ class LinkedList(object):
             while current:
                 print(current.value)
                 current = current.next_node
+
+
+
+    def search(self,value):
+        if not self.head:
+            return "Empty!!"
+        return self._search(self.head,value)
+
+
+    def _search(self,current_node,value):
+        if current_node == None:
+            return
+        elif current_node.value == value:
+            return current_node
+        return self.search(current_node.next_node,value)
+
+
+
+
+
+    
                
 
 
