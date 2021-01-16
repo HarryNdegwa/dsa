@@ -65,9 +65,9 @@ class DoublyLinkedList(object):
         count_ = 0
         current = self.head
         while current:
-            count+=1
+            count_+=1
             current = current.next_node
-        return current
+        return count_
 
 
     def traverse(self):
@@ -85,6 +85,9 @@ class DoublyLinkedList(object):
 if __name__ == "__main__":
     l = DoublyLinkedList(1)
     l.insert_start(0)
+    l.insert_center(2)
+    l.insert_end(3)
+    l.traverse()
 
 
 
