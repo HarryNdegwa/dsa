@@ -44,6 +44,21 @@ class DoublyLinkedList(object):
 
 
 
+    def insert_end(self,value):
+        if self.head == None:
+            self.head = Node(value)
+        else:
+            self._insert_end(self.head,value)
+
+
+
+    def _insert_end(self,current_node,value):
+        if not current_node.next_node:
+            current_node.next_node = Node(value)
+        else:
+            self._insert_end(current_node.next_node,value)
+
+
     def size(self):
         if not self.head:
             return 0
