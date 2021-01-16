@@ -70,6 +70,23 @@ class DoublyLinkedList(object):
         return current
 
 
+    def traverse(self):
+        if self.head == None:
+            print("Empty!!")
+        else:
+            current = self.head
+            while current:
+                print(current.value)
+                current = current.next_node
+
+
+
+
+if __name__ == "__main__":
+    l = DoublyLinkedList(1)
+    l.insert_start(0)
+
+
 
 
     
